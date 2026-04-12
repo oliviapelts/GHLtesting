@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F0E6;
+  --foreground: #2C1810;
+  --card: #FDFAF5;
+  --card-foreground: #2C1810;
+  --primary: #B85C38;
+  --primary-foreground: #FDFAF5;
+  --secondary: #7A8C6E;
+  --secondary-foreground: #FDFAF5;
+  --accent: #C49A5A;
+  --accent-foreground: #2C1810;
+  --muted: #EDE0CC;
+  --muted-foreground: #6B5B4E;
+  --border: #D4C4B0;
+  --ring: #B85C38;
+
+  /* Custom palette */
+  --terracotta: #B85C38;
+  --terracotta-light: #C4704A;
+  --terracotta-dark: #8B3F22;
+  --sage: #7A8C6E;
+  --sage-light: #9CAF88;
+  --sage-dark: #5C6E52;
+  --cream: #F7F0E6;
+  --cream-dark: #EDE0CC;
+  --warm-brown: #2C1810;
+  --dusty-rose: #D4A49A;
+  --gold: #C49A5A;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/* Font family variables - loaded via Google Fonts <link> in layout.tsx */
+:root {
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-lato: "Lato", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--terracotta-light);
+  border-radius: 4px;
+}
+
+/* Section divider wave */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Organic blob shape */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-in-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.fade-in-up-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.fade-in-up-delay-4 { animation-delay: 0.4s; opacity: 0; }
