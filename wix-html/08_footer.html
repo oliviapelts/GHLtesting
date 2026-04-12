@@ -1,0 +1,80 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  SECTION 8 — FOOTER                                 ║
+  ║  Wix: Full-width HTML embed strip                   ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm-footer {
+    background: #1A0F09;
+    padding: 2.5rem 1.5rem;
+    font-family: 'Lato', sans-serif;
+  }
+  .jm-footer-inner {
+    max-width: 1152px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .jm-footer-brand {
+    display: flex; align-items: center; gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .jm-footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 600; color: #fff;
+  }
+  .jm-footer-subtitle {
+    color: rgba(255,255,255,0.35);
+    font-size: 0.8rem;
+  }
+
+  .jm-footer-nav {
+    display: flex; gap: 1.5rem; list-style: none;
+  }
+  .jm-footer-nav a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none; font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+  .jm-footer-nav a:hover { color: #fff; }
+
+  .jm-footer-copy {
+    color: rgba(255,255,255,0.25);
+    font-size: 0.75rem;
+  }
+</style>
+
+<footer class="jm-footer">
+  <div class="jm-footer-inner">
+
+    <div class="jm-footer-brand">
+      <span class="jm-footer-name">Jamie Molnar</span>
+      <span class="jm-footer-subtitle">&middot; Licensed Therapist &amp; Clinical Supervisor</span>
+    </div>
+
+    <ul class="jm-footer-nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <p class="jm-footer-copy">
+      &copy; <span id="jmYear"></span> Jamie Molnar. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
+<script>
+  document.getElementById('jmYear').textContent = new Date().getFullYear();
+</script>

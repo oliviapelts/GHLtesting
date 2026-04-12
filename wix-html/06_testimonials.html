@@ -1,0 +1,130 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  SECTION 6 — TESTIMONIALS                           ║
+  ║  Wix: Full-width HTML embed strip                   ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm-testimonials {
+    background: #EDE0CC;
+    padding: 6rem 1.5rem;
+    font-family: 'Lato', sans-serif;
+  }
+  .jm-testimonials-inner { max-width: 1152px; margin: 0 auto; }
+
+  .jm-section-header { text-align: center; margin-bottom: 3.5rem; }
+  .jm-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #B85C38; display: block; margin-bottom: 0.75rem;
+  }
+  .jm-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; color: #2C1810; line-height: 1.2;
+  }
+
+  .jm-tcard-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+  }
+  .jm-tcard {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid #D4C4B0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex; flex-direction: column;
+  }
+  .jm-tcard-stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
+  .jm-star { color: #C49A5A; font-size: 0.9rem; }
+  .jm-tcard-quote {
+    color: #2C1810; line-height: 1.75; flex: 1;
+    margin-bottom: 1.5rem; font-size: 0.95rem;
+    font-style: italic;
+  }
+  .jm-tcard-divider { border-top: 1px solid #EDE0CC; padding-top: 1rem; }
+  .jm-tcard-name {
+    font-weight: 700; font-size: 0.875rem; color: #2C1810;
+  }
+  .jm-tcard-detail {
+    font-size: 0.75rem; color: #B85C38; font-weight: 700;
+    letter-spacing: 0.05em; margin-top: 0.2rem;
+  }
+
+  @media (max-width: 900px) {
+    .jm-tcard-grid { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 600px) and (max-width: 900px) {
+    .jm-tcard-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<section class="jm-testimonials" id="testimonials">
+  <div class="jm-testimonials-inner">
+
+    <div class="jm-section-header">
+      <span class="jm-label">Kind Words</span>
+      <h2 class="jm-h2">Stories of growth &amp; healing</h2>
+    </div>
+
+    <div class="jm-tcard-grid">
+
+      <div class="jm-tcard">
+        <div class="jm-tcard-stars">
+          <span class="jm-star">★</span><span class="jm-star">★</span>
+          <span class="jm-star">★</span><span class="jm-star">★</span>
+          <span class="jm-star">★</span>
+        </div>
+        <p class="jm-tcard-quote">
+          "Working with Jamie changed my relationship with myself. I finally feel
+          like I have tools to move through hard emotions instead of being
+          swallowed by them."
+        </p>
+        <div class="jm-tcard-divider">
+          <p class="jm-tcard-name">Client</p>
+          <p class="jm-tcard-detail">Individual Therapy</p>
+        </div>
+      </div>
+
+      <div class="jm-tcard">
+        <div class="jm-tcard-stars">
+          <span class="jm-star">★</span><span class="jm-star">★</span>
+          <span class="jm-star">★</span><span class="jm-star">★</span>
+          <span class="jm-star">★</span>
+        </div>
+        <p class="jm-tcard-quote">
+          "Jamie's clinical supervision has been invaluable. She creates a safe
+          space for me to grow and make mistakes — which is exactly what I needed
+          as a new therapist."
+        </p>
+        <div class="jm-tcard-divider">
+          <p class="jm-tcard-name">Clinician</p>
+          <p class="jm-tcard-detail">Clinical Supervision</p>
+        </div>
+      </div>
+
+      <div class="jm-tcard">
+        <div class="jm-tcard-stars">
+          <span class="jm-star">★</span><span class="jm-star">★</span>
+          <span class="jm-star">★</span><span class="jm-star">★</span>
+          <span class="jm-star">★</span>
+        </div>
+        <p class="jm-tcard-quote">
+          "My partner and I were speaking different languages. After working with
+          Jamie, we finally understand each other. Our relationship is in the
+          best place it's ever been."
+        </p>
+        <div class="jm-tcard-divider">
+          <p class="jm-tcard-name">Clients</p>
+          <p class="jm-tcard-detail">Couples Therapy</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,159 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  JAMIE MOLNAR — SHARED STYLES                       ║
+  ║  Paste this ONCE in your Wix site's Custom CSS       ║
+  ║  (Settings → Advanced → Custom Code → Head)         ║
+  ╚══════════════════════════════════════════════════════╝
+
+  Or include the <style> block below inside every section's
+  custom HTML embed if you prefer per-section isolation.
+-->
+
+<style>
+  /* ── GOOGLE FONTS ─────────────────────────── */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Lato:wght@300;400;700&display=swap');
+
+  /* ── PALETTE VARIABLES ──────────────────────── */
+  :root {
+    --jm-terracotta:       #B85C38;
+    --jm-terracotta-light: #C4704A;
+    --jm-terracotta-dark:  #8B3F22;
+    --jm-sage:             #7A8C6E;
+    --jm-sage-light:       #9CAF88;
+    --jm-cream:            #F7F0E6;
+    --jm-cream-dark:       #EDE0CC;
+    --jm-warm-brown:       #2C1810;
+    --jm-muted:            #6B5B4E;
+    --jm-gold:             #C49A5A;
+    --jm-dusty-rose:       #D4A49A;
+    --jm-border:           #D4C4B0;
+  }
+
+  /* ── RESETS (scoped to .jm- classes) ────────── */
+  .jm-section * { box-sizing: border-box; }
+  .jm-section a { text-decoration: none; }
+  .jm-section img { max-width: 100%; display: block; }
+
+  /* ── TYPOGRAPHY ──────────────────────────────── */
+  .jm-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--jm-warm-brown);
+  }
+  .jm-body {
+    font-family: 'Lato', system-ui, sans-serif;
+    color: var(--jm-muted);
+    line-height: 1.75;
+  }
+
+  /* ── BUTTONS ─────────────────────────────────── */
+  /* Primary solid */
+  .jm-btn-primary {
+    display: inline-block;
+    background: var(--jm-terracotta);
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .jm-btn-primary:hover { background: var(--jm-terracotta-dark); }
+
+  /* Outline */
+  .jm-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    color: var(--jm-terracotta);
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--jm-terracotta);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .jm-btn-outline:hover { background: rgba(184,92,56,0.05); }
+
+  /* Aurora glow button */
+  .jm-aurora-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .jm-aurora-glow {
+    position: absolute;
+    inset: -2px;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, #B85C38, #C49A5A, #7A8C6E);
+    opacity: 0.7;
+    filter: blur(10px);
+    transition: opacity 0.3s, filter 0.3s;
+    z-index: 0;
+  }
+  .jm-aurora-wrap:hover .jm-aurora-glow {
+    opacity: 1;
+    filter: blur(16px);
+  }
+  .jm-aurora-btn {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    background: rgba(2, 6, 23, 0.9);
+    color: #f1f5f9;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #1e293b;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .jm-aurora-btn:hover { background: rgba(2, 6, 23, 0.7); }
+
+  /* ── UTILITY ─────────────────────────────────── */
+  .jm-label {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--jm-terracotta);
+    margin-bottom: 0.75rem;
+  }
+  .jm-stars { display: flex; gap: 2px; }
+  .jm-star  { color: var(--jm-gold); font-size: 0.9rem; }
+  .jm-tag {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: #EEF2EA;
+    color: #5C6E52;
+    border: 1px solid #9CAF88;
+    border-radius: 9999px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* ── RESPONSIVE GRID HELPER ──────────────────── */
+  .jm-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .jm-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+  .jm-grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+  @media (max-width: 900px) {
+    .jm-grid-2, .jm-grid-3, .jm-grid-4 { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 600px) and (max-width: 900px) {
+    .jm-grid-4 { grid-template-columns: 1fr 1fr; }
+  }
+</style>

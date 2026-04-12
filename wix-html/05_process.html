@@ -1,0 +1,141 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  SECTION 5 — HOW IT WORKS (PROCESS)                 ║
+  ║  Wix: Full-width HTML embed strip                   ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm-process {
+    background: #ffffff;
+    padding: 6rem 1.5rem;
+    font-family: 'Lato', sans-serif;
+  }
+  .jm-process-inner { max-width: 960px; margin: 0 auto; }
+
+  .jm-section-header { text-align: center; margin-bottom: 3.5rem; }
+  .jm-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #B85C38; display: block; margin-bottom: 0.75rem;
+  }
+  .jm-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; color: #2C1810; line-height: 1.2;
+  }
+
+  /* Steps */
+  .jm-steps {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    position: relative;
+    margin-bottom: 3.5rem;
+  }
+
+  /* Gradient connector line */
+  .jm-steps-line {
+    position: absolute;
+    top: 40px;
+    left: calc(16.67% + 1rem);
+    right: calc(16.67% + 1rem);
+    height: 2px;
+    background: linear-gradient(to right, #B85C38, #C49A5A, #7A8C6E);
+    z-index: 0;
+  }
+
+  .jm-step { text-align: center; position: relative; z-index: 1; }
+  .jm-step-num {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: #F7F0E6; border: 2px solid #B85C38;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .jm-step-num span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 800; color: #B85C38;
+  }
+  .jm-step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700; color: #2C1810;
+    margin-bottom: 0.65rem;
+  }
+  .jm-step-desc { font-size: 0.9rem; color: #6B5B4E; line-height: 1.75; }
+
+  /* CTA */
+  .jm-process-cta { text-align: center; }
+  .jm-aurora-wrap { position: relative; display: inline-block; }
+  .jm-aurora-glow {
+    position: absolute; inset: -2px; border-radius: 0.5rem;
+    background: linear-gradient(to right, #B85C38, #C49A5A, #7A8C6E);
+    opacity: 0.7; filter: blur(10px); transition: all 0.3s; z-index: 0;
+  }
+  .jm-aurora-wrap:hover .jm-aurora-glow { opacity: 1; filter: blur(16px); }
+  .jm-aurora-btn {
+    position: relative; z-index: 1; display: inline-block;
+    background: rgba(2,6,23,0.9); color: #f1f5f9;
+    font-family: 'Lato', sans-serif; font-weight: 700; font-size: 1rem;
+    padding: 1rem 2.5rem; border-radius: 0.5rem;
+    border: 1px solid #1e293b; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .jm-aurora-btn:hover { background: rgba(2,6,23,0.7); }
+
+  @media (max-width: 700px) {
+    .jm-steps { grid-template-columns: 1fr; }
+    .jm-steps-line { display: none; }
+  }
+</style>
+
+<section class="jm-process" id="process">
+  <div class="jm-process-inner">
+
+    <div class="jm-section-header">
+      <span class="jm-label">How It Works</span>
+      <h2 class="jm-h2">Starting is simpler than you think</h2>
+    </div>
+
+    <div class="jm-steps">
+      <div class="jm-steps-line"></div>
+
+      <div class="jm-step">
+        <div class="jm-step-num"><span>01</span></div>
+        <h3 class="jm-step-title">Reach Out</h3>
+        <p class="jm-step-desc">
+          Send a quick message or fill out the contact form.
+          No pressure — just a first hello.
+        </p>
+      </div>
+
+      <div class="jm-step">
+        <div class="jm-step-num"><span>02</span></div>
+        <h3 class="jm-step-title">Free Consultation</h3>
+        <p class="jm-step-desc">
+          We'll schedule a complimentary 15-minute call to see
+          if we're a good fit for each other.
+        </p>
+      </div>
+
+      <div class="jm-step">
+        <div class="jm-step-num"><span>03</span></div>
+        <h3 class="jm-step-title">Begin Your Journey</h3>
+        <p class="jm-step-desc">
+          Together, we'll set intentions and start working toward
+          the life and relationships you want.
+        </p>
+      </div>
+    </div>
+
+    <div class="jm-process-cta">
+      <div class="jm-aurora-wrap">
+        <div class="jm-aurora-glow"></div>
+        <a href="#contact" class="jm-aurora-btn">Start with a Free 15-Min Call</a>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,183 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  SECTION 3 — ABOUT                                  ║
+  ║  Wix: Full-width HTML embed strip                   ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm-about {
+    background: #ffffff;
+    padding: 6rem 1.5rem;
+    font-family: 'Lato', sans-serif;
+  }
+  .jm-about-inner {
+    max-width: 1152px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* ── Left: image collage ── */
+  .jm-collage {
+    position: relative;
+  }
+  .jm-collage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .jm-collage-img {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .jm-collage-img.tall { grid-row: span 2; }
+  .jm-collage-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .jm-collage-img.tall   { height: 280px; }
+  .jm-collage-img.short  { height: 130px; }
+
+  .jm-collage-badge {
+    position: absolute;
+    bottom: -24px;
+    left: -20px;
+    background: #B85C38;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 1.1rem 1.4rem;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  }
+  .jm-collage-badge-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .jm-collage-badge-label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-top: 0.15rem;
+  }
+
+  /* ── Right: text ── */
+  .jm-about-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #B85C38;
+    margin-bottom: 0.75rem;
+  }
+  .jm-about-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #2C1810;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .jm-about-p {
+    color: #6B5B4E;
+    line-height: 1.8;
+    margin-bottom: 1.1rem;
+    font-size: 0.97rem;
+  }
+  .jm-about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  .jm-tag {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: #EEF2EA;
+    color: #5C6E52;
+    border: 1px solid #9CAF88;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .jm-about-inner { grid-template-columns: 1fr; }
+    .jm-collage { margin-bottom: 2.5rem; }
+  }
+</style>
+
+<section class="jm-about" id="about">
+  <div class="jm-about-inner">
+
+    <!-- Left: image collage -->
+    <div class="jm-collage">
+      <div class="jm-collage-grid">
+        <div class="jm-collage-img tall">
+          <img
+            src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=600&q=80"
+            alt="Therapy session"
+          />
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="jm-collage-img short">
+            <img
+              src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80"
+              alt="Journaling"
+            />
+          </div>
+          <div class="jm-collage-img short">
+            <img
+              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80"
+              alt="Nature and calm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Badge -->
+      <div class="jm-collage-badge">
+        <div class="jm-collage-badge-num">10+</div>
+        <div class="jm-collage-badge-label">Years of Experience</div>
+      </div>
+    </div>
+
+    <!-- Right: text -->
+    <div style="padding-left: 1rem;">
+      <p class="jm-about-label">About Jamie</p>
+      <h2 class="jm-about-h2">Therapy rooted in warmth &amp; real life</h2>
+      <p class="jm-about-p">
+        I believe therapy should feel like a conversation with someone who
+        truly sees you — not a sterile clinical encounter. My approach blends
+        evidence-based modalities with genuine human connection, meeting you
+        exactly where you are.
+      </p>
+      <p class="jm-about-p">
+        With over a decade of experience, I specialize in anxiety, relationship
+        dynamics, life transitions, and supporting therapists through clinical
+        supervision. I work with individuals and couples both in-person and via
+        telehealth.
+      </p>
+      <p class="jm-about-p">
+        Outside the therapy room, you'll find me hiking, exploring farmers
+        markets, or deep in a good novel — I believe deeply in rest, beauty,
+        and the nourishment of everyday life.
+      </p>
+
+      <div class="jm-about-tags">
+        <span class="jm-tag">EMDR Certified</span>
+        <span class="jm-tag">Somatic Therapy</span>
+        <span class="jm-tag">Gottman Method</span>
+        <span class="jm-tag">CBT / ACT</span>
+      </div>
+    </div>
+
+  </div>
+</section>

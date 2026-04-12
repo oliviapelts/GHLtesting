@@ -1,0 +1,141 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  SECTION 1 — NAVIGATION BAR                         ║
+  ║  Wix: Add HTML embed → paste entire block           ║
+  ║  Position: Sticky top via Wix header settings       ║
+  ║  Tip: In Wix use the built-in Header element and    ║
+  ║  replace its content with this embed, OR embed it   ║
+  ║  as a full-width strip at the top of each page.     ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap');
+  .jm-nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(247,240,230,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #D4C4B0;
+    font-family: 'Lato', sans-serif;
+  }
+  .jm-nav-inner {
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .jm-nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #B85C38;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .jm-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .jm-nav-links a {
+    color: #6B5B4E;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .jm-nav-links a:hover { color: #B85C38; }
+  .jm-nav-cta {
+    display: inline-block;
+    background: #B85C38;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .jm-nav-cta:hover { background: #8B3F22; }
+  .jm-nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+  .jm-nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #2C1810;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .jm-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #F7F0E6;
+    border-top: 1px solid #D4C4B0;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+  .jm-mobile-menu.open { display: flex; }
+  .jm-mobile-menu a {
+    color: #6B5B4E;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #EDE0CC;
+  }
+  @media (max-width: 768px) {
+    .jm-nav-links { display: none; }
+    .jm-nav-hamburger { display: block; }
+  }
+</style>
+
+<nav class="jm-nav">
+  <div class="jm-nav-inner">
+    <a href="#hero" class="jm-nav-logo">Jamie Molnar</a>
+
+    <ul class="jm-nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+
+    <a href="#contact" class="jm-nav-cta">Book a Call</a>
+
+    <button class="jm-nav-hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="jm-mobile-menu" id="jmMobileMenu">
+    <a href="#about"         onclick="toggleMenu()">About</a>
+    <a href="#services"      onclick="toggleMenu()">Services</a>
+    <a href="#process"       onclick="toggleMenu()">Process</a>
+    <a href="#testimonials"  onclick="toggleMenu()">Testimonials</a>
+    <a href="#contact"       onclick="toggleMenu()">Book a Call</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    var m = document.getElementById('jmMobileMenu');
+    m.classList.toggle('open');
+  }
+</script>

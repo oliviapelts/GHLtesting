@@ -1,0 +1,256 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  SECTION 4 — SERVICES                               ║
+  ║  Wix: Full-width HTML embed strip                   ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm-services {
+    background: #F7F0E6;
+    padding: 6rem 1.5rem;
+    font-family: 'Lato', sans-serif;
+  }
+  .jm-services-inner { max-width: 1152px; margin: 0 auto; }
+
+  /* Header */
+  .jm-section-header { text-align: center; margin-bottom: 3.5rem; }
+  .jm-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #B85C38; display: block; margin-bottom: 0.75rem;
+  }
+  .jm-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; color: #2C1810;
+    line-height: 1.2; margin-bottom: 1rem;
+  }
+  .jm-subtitle { color: #6B5B4E; max-width: 540px; margin: 0 auto; line-height: 1.75; font-size: 0.97rem; }
+
+  /* Cards grid */
+  .jm-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+  .jm-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border-top: 4px solid;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .jm-card:hover {
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+  }
+
+  /* Per-card colours */
+  .jm-card-individual { background: #FBF3EE; border-color: #C4704A; }
+  .jm-card-couples    { background: #EEF2EA; border-color: #7A8C6E; }
+  .jm-card-super      { background: #FBF6ED; border-color: #C49A5A; }
+  .jm-card-business   { background: #F9EFEE; border-color: #D4A49A; }
+
+  .jm-card-icon {
+    width: 48px; height: 48px; border-radius: 0.75rem;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.1rem; font-size: 1.4rem;
+  }
+  .jm-icon-individual { background: #B85C38; }
+  .jm-icon-couples    { background: #7A8C6E; }
+  .jm-icon-super      { background: #C49A5A; }
+  .jm-icon-business   { background: #D4A49A; }
+
+  .jm-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700; color: #2C1810; margin-bottom: 0.2rem;
+  }
+  .jm-card-tagline {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #6B5B4E; margin-bottom: 0.75rem;
+  }
+  .jm-card-desc {
+    font-size: 0.875rem; color: #6B5B4E; line-height: 1.7; flex: 1;
+  }
+  .jm-card-link {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    margin-top: 1.25rem; font-size: 0.875rem; font-weight: 700;
+    color: #B85C38; text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .jm-card-link:hover { gap: 0.6rem; }
+
+  /* Featured banner */
+  .jm-featured {
+    background: #2C1810;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .jm-featured-text { padding: 3.5rem; }
+  .jm-featured-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #C49A5A; display: block; margin-bottom: 0.75rem;
+  }
+  .jm-featured-h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 1rem;
+  }
+  .jm-featured-p {
+    color: rgba(255,255,255,0.7); line-height: 1.75;
+    font-size: 0.95rem; margin-bottom: 2rem;
+  }
+
+  /* Aurora button */
+  .jm-aurora-wrap { position: relative; display: inline-block; }
+  .jm-aurora-glow {
+    position: absolute; inset: -2px; border-radius: 0.5rem;
+    background: linear-gradient(to right, #C49A5A, #B85C38, #7A8C6E);
+    opacity: 0.7; filter: blur(10px); transition: all 0.3s; z-index: 0;
+  }
+  .jm-aurora-wrap:hover .jm-aurora-glow { opacity: 1; filter: blur(16px); }
+  .jm-aurora-btn {
+    position: relative; z-index: 1; display: inline-block;
+    background: rgba(2,6,23,0.9); color: #f1f5f9;
+    font-family: 'Lato', sans-serif; font-weight: 700; font-size: 0.9rem;
+    padding: 0.8rem 1.75rem; border-radius: 0.5rem;
+    border: 1px solid #1e293b; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .jm-aurora-btn:hover { background: rgba(2,6,23,0.7); }
+
+  .jm-featured-img {
+    position: relative; min-height: 260px;
+    overflow: hidden;
+  }
+  .jm-featured-img img {
+    width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.6;
+  }
+  .jm-featured-img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, #2C1810, transparent);
+  }
+
+  @media (max-width: 900px) {
+    .jm-cards { grid-template-columns: 1fr 1fr; }
+    .jm-featured { grid-template-columns: 1fr; }
+    .jm-featured-img { min-height: 200px; }
+  }
+  @media (max-width: 560px) {
+    .jm-cards { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section class="jm-services" id="services">
+  <div class="jm-services-inner">
+
+    <!-- Header -->
+    <div class="jm-section-header">
+      <span class="jm-label">What I Offer</span>
+      <h2 class="jm-h2">Services designed around you</h2>
+      <p class="jm-subtitle">
+        Whether you're seeking personal healing, relationship support, professional
+        guidance, or business growth — I have a path for you.
+      </p>
+    </div>
+
+    <!-- 4 Cards -->
+    <div class="jm-cards">
+
+      <!-- Individual Therapy -->
+      <div class="jm-card jm-card-individual">
+        <div class="jm-card-icon jm-icon-individual">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 class="jm-card-title">Individual Therapy</h3>
+        <p class="jm-card-tagline">A space that's fully yours</p>
+        <p class="jm-card-desc">
+          One-on-one sessions tailored to your unique needs and goals. Using
+          evidence-based approaches including somatic therapy, EMDR, and CBT
+          to support healing, growth, and lasting change.
+        </p>
+        <a href="#contact" class="jm-card-link">Learn more &rarr;</a>
+      </div>
+
+      <!-- Couples Therapy -->
+      <div class="jm-card jm-card-couples">
+        <div class="jm-card-icon jm-icon-couples">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="jm-card-title">Couples Therapy</h3>
+        <p class="jm-card-tagline">Grow together, not apart</p>
+        <p class="jm-card-desc">
+          Rebuild connection, improve communication, and navigate conflict with
+          compassion. Whether working through a difficult season or deepening
+          an already strong relationship.
+        </p>
+        <a href="#contact" class="jm-card-link">Learn more &rarr;</a>
+      </div>
+
+      <!-- Clinical Supervision -->
+      <div class="jm-card jm-card-super">
+        <div class="jm-card-icon jm-icon-super">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3 class="jm-card-title">Clinical Supervision</h3>
+        <p class="jm-card-tagline">Support for the helpers</p>
+        <p class="jm-card-desc">
+          Individual and group supervision for pre-licensed and licensed
+          clinicians. Gain confidence, refine your skills, and receive the
+          reflective guidance every therapist deserves.
+        </p>
+        <a href="#contact" class="jm-card-link">Learn more &rarr;</a>
+      </div>
+
+      <!-- Business Consultation -->
+      <div class="jm-card jm-card-business">
+        <div class="jm-card-icon jm-icon-business">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="jm-card-title">Business Consultation</h3>
+        <p class="jm-card-tagline">Build the practice you envision</p>
+        <p class="jm-card-desc">
+          Practical guidance for therapists launching or growing a private
+          practice. From branding and systems to marketing and pricing —
+          build sustainably and with intention.
+        </p>
+        <a href="#contact" class="jm-card-link">Learn more &rarr;</a>
+      </div>
+
+    </div>
+
+    <!-- Featured supervision banner -->
+    <div class="jm-featured">
+      <div class="jm-featured-text">
+        <span class="jm-featured-label">Featured</span>
+        <h3 class="jm-featured-h3">Clinical Supervision for Growing Therapists</h3>
+        <p class="jm-featured-p">
+          Personalized one-on-one and group supervision for pre-licensed and
+          licensed clinicians. Build your competence, confidence, and clinical
+          identity in a supportive, reflective environment.
+        </p>
+        <div class="jm-aurora-wrap">
+          <div class="jm-aurora-glow"></div>
+          <a href="#contact" class="jm-aurora-btn">Apply for Supervision</a>
+        </div>
+      </div>
+      <div class="jm-featured-img">
+        <img
+          src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80"
+          alt="Clinical supervision"
+        />
+        <div class="jm-featured-img-overlay"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
