@@ -1,0 +1,249 @@
+<!--
+  SECTION 2 — HERO (Brand v2)
+  PHOTO: Upload the smiling green chair photo to Wix Media Library
+  and replace HERO_PHOTO_URL below with the Wix image URL.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm2-hero {
+    background: #F4F0E6;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding-top: 72px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Subtle background texture line */
+  .jm2-hero::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; bottom: 0;
+    width: 1px; background: #DDD8C8; z-index: 0;
+  }
+
+  .jm2-hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto;
+    padding: 5rem 2rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; width: 100%;
+  }
+
+  /* ── LEFT TEXT ── */
+  .jm2-hero-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .jm2-hero-eyebrow-line {
+    display: block; width: 32px; height: 1px; background: #9E8B38;
+  }
+  .jm2-hero-eyebrow-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #9E8B38;
+  }
+
+  .jm2-hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 600; line-height: 1.05;
+    color: #1A1510; margin-bottom: 1.75rem;
+    letter-spacing: -0.01em;
+  }
+  .jm2-hero-h1 em {
+    font-style: italic; color: #72182A;
+  }
+
+  .jm2-hero-p {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem; font-weight: 300; line-height: 1.85;
+    color: #6A5E50; max-width: 420px; margin-bottom: 2.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .jm2-hero-actions {
+    display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem;
+  }
+  .jm2-btn-primary {
+    display: inline-block; font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; text-decoration: none;
+    color: #fff; background: #72182A;
+    padding: 1rem 2.5rem; border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .jm2-btn-primary:hover { background: #5a1220; }
+  .jm2-btn-outline {
+    display: inline-block; font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; text-decoration: none;
+    color: #9E8B38; border: 1px solid #9E8B38;
+    padding: 1rem 2.5rem; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .jm2-btn-outline:hover { background: #9E8B38; color: #fff; }
+
+  /* Trust row */
+  .jm2-trust {
+    display: flex; flex-wrap: wrap; gap: 2rem;
+    padding-top: 2rem; border-top: 1px solid #DDD8C8;
+  }
+  .jm2-trust-item {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #9A9080;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .jm2-trust-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #9E8B38; flex-shrink: 0;
+  }
+
+  /* ── RIGHT PHOTO ── */
+  .jm2-hero-photo-col {
+    display: flex; justify-content: center; align-items: flex-end;
+  }
+  .jm2-hero-photo-wrap {
+    position: relative; width: 100%; max-width: 460px;
+  }
+  /* Gold frame accent */
+  .jm2-photo-frame-accent {
+    position: absolute; top: -16px; right: -16px;
+    width: 65%; height: 65%;
+    border: 1px solid #9E8B38; border-radius: 2px; z-index: 0;
+  }
+  /* Wine block accent */
+  .jm2-photo-block {
+    position: absolute; bottom: -20px; left: -20px;
+    width: 40%; height: 35%;
+    background: #72182A; border-radius: 2px; z-index: 0;
+    opacity: 0.12;
+  }
+  .jm2-hero-img {
+    position: relative; z-index: 2;
+    width: 100%; aspect-ratio: 3/4;
+    object-fit: cover; object-position: top;
+    border-radius: 2px;
+    box-shadow: 0 32px 64px rgba(26,21,16,0.12);
+    display: block;
+    background: #E8E2D4; /* placeholder color */
+  }
+  /* Placeholder text when no image */
+  .jm2-hero-img-placeholder {
+    position: relative; z-index: 2;
+    width: 100%; aspect-ratio: 3/4;
+    background: #E8E2D4;
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+    box-shadow: 0 32px 64px rgba(26,21,16,0.12);
+  }
+  .jm2-placeholder-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #9A9080; text-align: center; padding: 1rem;
+  }
+
+  /* Floating credential card */
+  .jm2-cred-card {
+    position: absolute; bottom: 2rem; left: -2rem; z-index: 10;
+    background: #fff; padding: 1rem 1.25rem;
+    border-radius: 2px; border-left: 3px solid #9E8B38;
+    box-shadow: 0 8px 32px rgba(26,21,16,0.1);
+    min-width: 200px;
+  }
+  .jm2-cred-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 600; color: #1A1510;
+    letter-spacing: 0.05em;
+  }
+  .jm2-cred-card-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #9E8B38; margin-top: 3px;
+  }
+
+  @media (max-width: 900px) {
+    .jm2-hero::before { display: none; }
+    .jm2-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .jm2-hero-photo-col { justify-content: center; }
+    .jm2-hero-photo-wrap { max-width: 340px; }
+    .jm2-cred-card { left: 0; }
+  }
+</style>
+
+<section class="jm2-hero" id="hero">
+  <div class="jm2-hero-inner">
+
+    <!-- Text -->
+    <div>
+      <div class="jm2-hero-eyebrow">
+        <span class="jm2-hero-eyebrow-line"></span>
+        <span class="jm2-hero-eyebrow-text">Holistic Mental Health Expert</span>
+      </div>
+
+      <h1 class="jm2-hero-h1">
+        You deserve<br>
+        to feel <em>whole</em><br>
+        again.
+      </h1>
+
+      <p class="jm2-hero-p">
+        I'm Jamie Molnar — therapist, clinical supervisor, and holistic mental
+        health expert. I help individuals, couples, and fellow clinicians move
+        from surviving to truly thriving.
+      </p>
+
+      <div class="jm2-hero-actions">
+        <a href="#contact" class="jm2-btn-primary">Book a Free Consultation</a>
+        <a href="#services" class="jm2-btn-outline">Explore Services</a>
+      </div>
+
+      <div class="jm2-trust">
+        <div class="jm2-trust-item">
+          <span class="jm2-trust-dot"></span> Licensed LCSW
+        </div>
+        <div class="jm2-trust-item">
+          <span class="jm2-trust-dot"></span> 10+ Years Experience
+        </div>
+        <div class="jm2-trust-item">
+          <span class="jm2-trust-dot"></span> Telehealth &amp; In-Person
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo -->
+    <div class="jm2-hero-photo-col">
+      <div class="jm2-hero-photo-wrap">
+        <div class="jm2-photo-frame-accent"></div>
+        <div class="jm2-photo-block"></div>
+
+        <!--
+          REPLACE THIS DIV WITH:
+          <img src="YOUR_WIX_IMAGE_URL" alt="Jamie Molnar" class="jm2-hero-img" />
+          Use the smiling green chair photo.
+        -->
+        <div class="jm2-hero-img-placeholder">
+          <svg width="40" height="40" viewBox="0 0 44 44" fill="none">
+            <ellipse cx="22" cy="22" rx="21" ry="21" stroke="#9E8B38" stroke-width="1"/>
+            <line x1="22" y1="10" x2="22" y2="34" stroke="#9E8B38" stroke-width="0.8"/>
+            <path d="M22 10 C18 6 13 9 16 13 C19 17 22 14 22 10Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+            <path d="M22 10 C26 6 31 9 28 13 C25 17 22 14 22 10Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+            <path d="M22 34 C17 30 14 34 18 36 C20 37 22 35 22 34Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+            <path d="M22 34 C27 30 30 34 26 36 C24 37 22 35 22 34Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+          </svg>
+          <p class="jm2-placeholder-label">Upload: smiling<br>green chair photo</p>
+        </div>
+
+        <!-- Floating credential card -->
+        <div class="jm2-cred-card">
+          <div class="jm2-cred-card-name">Jamie Molnar</div>
+          <div class="jm2-cred-card-title">LCSW · Holistic Mental Health Expert</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

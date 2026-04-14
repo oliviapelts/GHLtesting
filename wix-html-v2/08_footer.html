@@ -1,0 +1,166 @@
+<!--
+  SECTION 8 — FOOTER (Brand v2)
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm2-footer {
+    background: #0F0C09;
+    font-family: 'Jost', sans-serif;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Upper footer */
+  .jm2-footer-upper {
+    padding: 4rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .jm2-footer-upper-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  /* Brand column */
+  .jm2-footer-brand { }
+  .jm2-footer-logo {
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;
+  }
+  .jm2-footer-logo-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #9E8B38;
+  }
+  .jm2-footer-tagline {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(255,255,255,0.3);
+    margin-bottom: 1.5rem; line-height: 1.7;
+  }
+  .jm2-footer-desc {
+    font-size: 0.8rem; font-weight: 300; line-height: 1.8;
+    color: rgba(255,255,255,0.35); letter-spacing: 0.03em;
+  }
+
+  /* Nav columns */
+  .jm2-footer-col-title {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #9E8B38;
+    margin-bottom: 1.25rem;
+  }
+  .jm2-footer-col-links {
+    list-style: none; display: flex; flex-direction: column; gap: 0.75rem;
+  }
+  .jm2-footer-col-links a {
+    font-size: 0.8rem; font-weight: 300; letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s;
+  }
+  .jm2-footer-col-links a:hover { color: #C4AA58; }
+
+  /* Lower footer */
+  .jm2-footer-lower {
+    padding: 1.5rem 2rem;
+  }
+  .jm2-footer-lower-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .jm2-footer-copy {
+    font-size: 0.7rem; font-weight: 400; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.2);
+  }
+  .jm2-footer-legal {
+    display: flex; gap: 1.5rem;
+  }
+  .jm2-footer-legal a {
+    font-size: 0.7rem; font-weight: 400; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.2); text-decoration: none; transition: color 0.2s;
+  }
+  .jm2-footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+  @media (max-width: 900px) {
+    .jm2-footer-upper-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .jm2-footer-upper-inner { grid-template-columns: 1fr; }
+    .jm2-footer-lower-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
+<footer class="jm2-footer">
+  <div class="jm2-footer-upper">
+    <div class="jm2-footer-upper-inner">
+
+      <!-- Brand -->
+      <div class="jm2-footer-brand">
+        <div class="jm2-footer-logo">
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+            <ellipse cx="22" cy="22" rx="21" ry="21" stroke="#9E8B38" stroke-width="1"/>
+            <line x1="22" y1="10" x2="22" y2="34" stroke="#9E8B38" stroke-width="0.8"/>
+            <path d="M22 10 C18 6 13 9 16 13 C19 17 22 14 22 10Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+            <path d="M22 10 C26 6 31 9 28 13 C25 17 22 14 22 10Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+            <path d="M22 34 C17 30 14 34 18 36 C20 37 22 35 22 34Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+            <path d="M22 34 C27 30 30 34 26 36 C24 37 22 35 22 34Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+          </svg>
+          <span class="jm2-footer-logo-name">Jamie Molnar</span>
+        </div>
+        <p class="jm2-footer-tagline">Holistic Mental Health Expert</p>
+        <p class="jm2-footer-desc">
+          Therapist, clinical supervisor, and entrepreneur — helping individuals,
+          couples, and clinicians build lives and practices they truly love.
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <p class="jm2-footer-col-title">Services</p>
+        <ul class="jm2-footer-col-links">
+          <li><a href="#services">Individual Therapy</a></li>
+          <li><a href="#services">Couples Therapy</a></li>
+          <li><a href="#services">Clinical Supervision</a></li>
+          <li><a href="#services">Business Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Ventures -->
+      <div>
+        <p class="jm2-footer-col-title">Ventures</p>
+        <ul class="jm2-footer-col-links">
+          <li><a href="#services">Be Your Best Self</a></li>
+          <li><a href="#services">Holistic House</a></li>
+          <li><a href="#services">Retreats</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <p class="jm2-footer-col-title">Connect</p>
+        <ul class="jm2-footer-col-links">
+          <li><a href="#about">About Jamie</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#contact">Book a Call</a></li>
+          <li><a href="https://instagram.com/jamiemolnar" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="jm2-footer-lower">
+    <div class="jm2-footer-lower-inner">
+      <p class="jm2-footer-copy">
+        &copy; <span id="jm2Year"></span> Jamie Molnar. All rights reserved.
+      </p>
+      <div class="jm2-footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Good Faith Estimate</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('jm2Year').textContent = new Date().getFullYear();
+</script>

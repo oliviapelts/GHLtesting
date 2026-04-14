@@ -1,0 +1,180 @@
+<!--
+  SECTION 6 — TESTIMONIALS (Brand v2)
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm2-testimonials {
+    background: #F4F0E6;
+    padding: 7rem 2rem;
+    font-family: 'Jost', sans-serif;
+    position: relative; overflow: hidden;
+  }
+  /* Decorative large quote mark */
+  .jm2-testimonials::before {
+    content: '\201C';
+    position: absolute; top: -2rem; left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20rem; font-weight: 600; line-height: 1;
+    color: #9E8B38; opacity: 0.05;
+    pointer-events: none; z-index: 0;
+  }
+
+  .jm2-testimonials-inner {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .jm2-section-header { margin-bottom: 4rem; }
+  .jm2-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;
+  }
+  .jm2-eyebrow-line { display: block; width: 32px; height: 1px; background: #9E8B38; }
+  .jm2-eyebrow-text {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #9E8B38;
+  }
+  .jm2-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600; color: #1A1510; line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .jm2-h2 em { font-style: italic; color: #72182A; }
+
+  /* Cards */
+  .jm2-tgrid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-bottom: 3rem;
+  }
+  .jm2-tcard {
+    background: #fff; border-radius: 2px;
+    padding: 2.5rem; border: 1px solid #E8E2D4;
+    display: flex; flex-direction: column;
+    transition: box-shadow 0.3s;
+  }
+  .jm2-tcard:hover { box-shadow: 0 16px 40px rgba(26,21,16,0.08); }
+
+  .jm2-tcard-quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; color: #9E8B38; line-height: 0.8;
+    margin-bottom: 1.25rem; font-weight: 400;
+  }
+  .jm2-tcard-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-style: italic;
+    color: #1A1510; line-height: 1.7; flex: 1;
+    margin-bottom: 2rem; font-weight: 400;
+  }
+  .jm2-tcard-divider {
+    width: 32px; height: 1px; background: #9E8B38;
+    margin-bottom: 1rem;
+  }
+  .jm2-tcard-name {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #1A1510;
+  }
+  .jm2-tcard-service {
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #9E8B38; margin-top: 3px;
+  }
+
+  /* Featured large quote */
+  .jm2-featured-quote {
+    background: #72182A; border-radius: 2px;
+    padding: 4rem; display: flex;
+    flex-direction: column; align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .jm2-featured-quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-style: italic; font-weight: 400;
+    color: #fff; line-height: 1.6; max-width: 800px;
+  }
+  .jm2-featured-quote-attr {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .jm2-featured-attr-line {
+    display: block; width: 28px; height: 1px; background: #C4AA58;
+  }
+  .jm2-featured-attr-text {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #C4AA58;
+  }
+
+  @media (max-width: 900px) {
+    .jm2-tgrid { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 600px) and (max-width: 900px) {
+    .jm2-tgrid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<section class="jm2-testimonials" id="testimonials">
+  <div class="jm2-testimonials-inner">
+
+    <div class="jm2-section-header">
+      <div class="jm2-eyebrow">
+        <span class="jm2-eyebrow-line"></span>
+        <span class="jm2-eyebrow-text">Kind Words</span>
+      </div>
+      <h2 class="jm2-h2">Stories of <em>transformation.</em></h2>
+    </div>
+
+    <div class="jm2-tgrid">
+
+      <div class="jm2-tcard">
+        <div class="jm2-tcard-quote-mark">&ldquo;</div>
+        <p class="jm2-tcard-text">
+          Working with Jamie changed my relationship with myself. I finally feel
+          like I have tools to move through hard emotions instead of being
+          swallowed by them.
+        </p>
+        <div class="jm2-tcard-divider"></div>
+        <p class="jm2-tcard-name">Client</p>
+        <p class="jm2-tcard-service">Individual Therapy</p>
+      </div>
+
+      <div class="jm2-tcard">
+        <div class="jm2-tcard-quote-mark">&ldquo;</div>
+        <p class="jm2-tcard-text">
+          Jamie's supervision has been invaluable. She creates a safe space to
+          grow and make mistakes — which is exactly what I needed as a new
+          clinician finding my footing.
+        </p>
+        <div class="jm2-tcard-divider"></div>
+        <p class="jm2-tcard-name">Clinician</p>
+        <p class="jm2-tcard-service">Clinical Supervision</p>
+      </div>
+
+      <div class="jm2-tcard">
+        <div class="jm2-tcard-quote-mark">&ldquo;</div>
+        <p class="jm2-tcard-text">
+          My partner and I were speaking different languages. After working with
+          Jamie we finally understand each other. Our relationship is in the best
+          place it has ever been.
+        </p>
+        <div class="jm2-tcard-divider"></div>
+        <p class="jm2-tcard-name">Clients</p>
+        <p class="jm2-tcard-service">Couples Therapy</p>
+      </div>
+
+    </div>
+
+    <!-- Featured large quote -->
+    <div class="jm2-featured-quote">
+      <p class="jm2-featured-quote-text">
+        "The retreat was unlike anything I've experienced. It gave me the space to
+        reconnect with myself in a way I didn't even know I was missing. I left
+        feeling genuinely lighter — and with a real plan for what comes next."
+      </p>
+      <div class="jm2-featured-quote-attr">
+        <span class="jm2-featured-attr-line"></span>
+        <span class="jm2-featured-attr-text">Retreat Participant</span>
+      </div>
+    </div>
+
+  </div>
+</section>

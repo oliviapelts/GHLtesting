@@ -1,0 +1,225 @@
+<!--
+  SECTION 5 — PROCESS (Brand v2)
+  PHOTO: Use the staircase photo (fun, energetic)
+  Replace PHOTO_URL with your Wix image URL.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm2-process {
+    background: #fff;
+    padding: 7rem 2rem;
+    font-family: 'Jost', sans-serif;
+  }
+  .jm2-process-inner { max-width: 1200px; margin: 0 auto; }
+
+  /* Two-column layout: text left, photo right */
+  .jm2-process-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; margin-top: 4rem;
+  }
+
+  /* Header */
+  .jm2-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;
+  }
+  .jm2-eyebrow-line { display: block; width: 32px; height: 1px; background: #9E8B38; }
+  .jm2-eyebrow-text {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #9E8B38;
+  }
+  .jm2-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600; color: #1A1510; line-height: 1.15;
+    margin-bottom: 1.5rem; letter-spacing: -0.01em;
+  }
+  .jm2-h2 em { font-style: italic; color: #72182A; }
+  .jm2-process-intro {
+    font-size: 0.95rem; font-weight: 300; color: #6A5E50;
+    line-height: 1.85; margin-bottom: 2.5rem; letter-spacing: 0.02em;
+  }
+
+  /* Steps */
+  .jm2-steps { display: flex; flex-direction: column; gap: 0; }
+  .jm2-step {
+    display: flex; gap: 1.75rem; align-items: flex-start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid #E8E2D4;
+    position: relative;
+  }
+  .jm2-step:last-child { border-bottom: none; }
+  .jm2-step-left { flex-shrink: 0; }
+  .jm2-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.25rem; font-weight: 400;
+    color: #DDD8C8; line-height: 1;
+    transition: color 0.3s;
+  }
+  .jm2-step:hover .jm2-step-num { color: #9E8B38; }
+  .jm2-step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 600; color: #1A1510;
+    margin-bottom: 0.4rem; letter-spacing: 0.01em;
+  }
+  .jm2-step-desc {
+    font-size: 0.875rem; font-weight: 300; color: #6A5E50;
+    line-height: 1.8; letter-spacing: 0.02em;
+  }
+
+  /* CTA */
+  .jm2-process-cta { margin-top: 2.5rem; }
+  .jm2-btn-wine {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none;
+    color: #fff; background: #72182A;
+    padding: 1rem 2.5rem; border-radius: 2px; transition: background 0.2s;
+  }
+  .jm2-btn-wine:hover { background: #5a1220; }
+
+  /* Photo side */
+  .jm2-process-photo { position: relative; }
+  .jm2-process-img {
+    width: 100%; aspect-ratio: 3/4;
+    object-fit: cover; object-position: top;
+    border-radius: 2px; display: block;
+    background: #E8E2D4;
+    box-shadow: 0 24px 48px rgba(26,21,16,0.1);
+  }
+  .jm2-process-img-placeholder {
+    width: 100%; aspect-ratio: 3/4;
+    background: #E8E2D4; border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+    box-shadow: 0 24px 48px rgba(26,21,16,0.1);
+  }
+  .jm2-placeholder-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #9A9080; text-align: center; padding: 0.75rem;
+  }
+  /* Decorative gold border frame */
+  .jm2-process-frame {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    width: 55%; height: 45%;
+    border: 1px solid #9E8B38; border-radius: 2px; z-index: 0;
+    pointer-events: none;
+  }
+  /* Quote card */
+  .jm2-quote-card {
+    position: absolute; top: 2.5rem; left: -2rem; z-index: 3;
+    background: #72182A; color: #fff;
+    padding: 1.5rem; border-radius: 2px;
+    max-width: 220px;
+    box-shadow: 0 12px 32px rgba(114,24,42,0.3);
+  }
+  .jm2-quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic; line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+  .jm2-quote-attr {
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; opacity: 0.7;
+  }
+
+  @media (max-width: 900px) {
+    .jm2-process-grid { grid-template-columns: 1fr; }
+    .jm2-process-photo { display: none; }
+  }
+</style>
+
+<section class="jm2-process" id="process">
+  <div class="jm2-process-inner">
+
+    <div class="jm2-eyebrow">
+      <span class="jm2-eyebrow-line"></span>
+      <span class="jm2-eyebrow-text">How It Works</span>
+    </div>
+    <h2 class="jm2-h2">Your path to healing<br><em>starts simply.</em></h2>
+
+    <div class="jm2-process-grid">
+
+      <!-- Left: Steps -->
+      <div>
+        <p class="jm2-process-intro">
+          Beginning can feel like the hardest part. I've made it as simple and
+          pressure-free as possible — because you deserve support that meets you
+          where you are right now.
+        </p>
+
+        <div class="jm2-steps">
+          <div class="jm2-step">
+            <div class="jm2-step-left">
+              <div class="jm2-step-num">01</div>
+            </div>
+            <div>
+              <h3 class="jm2-step-title">Reach Out</h3>
+              <p class="jm2-step-desc">
+                Fill out the contact form or send a message. No commitment required —
+                just a first hello from wherever you are.
+              </p>
+            </div>
+          </div>
+
+          <div class="jm2-step">
+            <div class="jm2-step-left">
+              <div class="jm2-step-num">02</div>
+            </div>
+            <div>
+              <h3 class="jm2-step-title">Free Consultation Call</h3>
+              <p class="jm2-step-desc">
+                We'll connect for a complimentary 15-minute call to explore what
+                you need and which of my offerings is the right fit for you.
+              </p>
+            </div>
+          </div>
+
+          <div class="jm2-step">
+            <div class="jm2-step-left">
+              <div class="jm2-step-num">03</div>
+            </div>
+            <div>
+              <h3 class="jm2-step-title">Begin Your Journey</h3>
+              <p class="jm2-step-desc">
+                We set intentions together and get to work — whether that's weekly
+                sessions, supervision, a retreat, or something in between.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="jm2-process-cta">
+          <a href="#contact" class="jm2-btn-wine">Book Your Free Call</a>
+        </div>
+      </div>
+
+      <!-- Right: Photo -->
+      <div class="jm2-process-photo">
+        <div class="jm2-process-frame"></div>
+
+        <!--
+          REPLACE WITH: <img src="PHOTO_URL" alt="Jamie Molnar" class="jm2-process-img" />
+          Use the staircase photo.
+        -->
+        <div class="jm2-process-img-placeholder">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <ellipse cx="22" cy="22" rx="21" ry="21" stroke="#9E8B38" stroke-width="1"/>
+            <line x1="22" y1="10" x2="22" y2="34" stroke="#9E8B38" stroke-width="0.8"/>
+            <path d="M22 10 C18 6 13 9 16 13 C19 17 22 14 22 10Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+            <path d="M22 10 C26 6 31 9 28 13 C25 17 22 14 22 10Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+          </svg>
+          <p class="jm2-placeholder-label">Upload:<br>staircase photo</p>
+        </div>
+
+        <!-- Quote card -->
+        <div class="jm2-quote-card">
+          <p class="jm2-quote-text">"You don't have to be in crisis to deserve support."</p>
+          <p class="jm2-quote-attr">— Jamie Molnar</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

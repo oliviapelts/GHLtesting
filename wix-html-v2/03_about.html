@@ -1,0 +1,230 @@
+<!--
+  SECTION 3 — ABOUT (Brand v2)
+  PHOTOS:
+  - Left large: seated bouclé chair photo (serene/calm)
+  - Right small: walking room photo
+  Replace PHOTO_1_URL and PHOTO_2_URL with your Wix image URLs.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm2-about {
+    background: #fff;
+    padding: 7rem 2rem;
+    font-family: 'Jost', sans-serif;
+  }
+  .jm2-about-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+
+  /* ── LEFT: Photos ── */
+  .jm2-about-photos { position: relative; }
+  .jm2-photo-main {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover; object-position: top;
+    border-radius: 2px;
+    display: block; background: #E8E2D4;
+    box-shadow: 0 24px 48px rgba(26,21,16,0.1);
+  }
+  .jm2-photo-main-placeholder {
+    width: 100%; aspect-ratio: 4/5;
+    background: #E8E2D4; border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+  }
+  .jm2-photo-secondary {
+    position: absolute; bottom: -2rem; right: -2rem; z-index: 3;
+    width: 48%; aspect-ratio: 1;
+    object-fit: cover; object-position: center top;
+    border-radius: 2px; border: 4px solid #fff;
+    box-shadow: 0 16px 32px rgba(26,21,16,0.12);
+    display: block; background: #DDD8C8;
+  }
+  .jm2-photo-secondary-placeholder {
+    position: absolute; bottom: -2rem; right: -2rem; z-index: 3;
+    width: 48%; aspect-ratio: 1;
+    background: #DDD8C8; border-radius: 2px; border: 4px solid #fff;
+    box-shadow: 0 16px 32px rgba(26,21,16,0.12);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.25rem;
+  }
+  /* Gold stat badge */
+  .jm2-stat-badge {
+    position: absolute; top: 2rem; left: -2rem; z-index: 4;
+    background: #9E8B38; color: #fff;
+    padding: 1.25rem 1.5rem; border-radius: 2px;
+    box-shadow: 0 12px 32px rgba(158,139,56,0.3);
+  }
+  .jm2-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 700; line-height: 1;
+  }
+  .jm2-stat-label {
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; opacity: 0.9; margin-top: 4px;
+  }
+
+  /* ── RIGHT: Text ── */
+  .jm2-about-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;
+  }
+  .jm2-eyebrow-line { display: block; width: 32px; height: 1px; background: #9E8B38; }
+  .jm2-eyebrow-text {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #9E8B38;
+  }
+  .jm2-about-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600; color: #1A1510; line-height: 1.15;
+    margin-bottom: 1.5rem; letter-spacing: -0.01em;
+  }
+  .jm2-about-h2 em { font-style: italic; color: #72182A; }
+  .jm2-about-p {
+    font-size: 0.95rem; font-weight: 300; line-height: 1.9;
+    color: #6A5E50; margin-bottom: 1.25rem; letter-spacing: 0.02em;
+  }
+
+  /* Ventures list */
+  .jm2-ventures {
+    margin: 2rem 0;
+    display: flex; flex-direction: column; gap: 0.75rem;
+  }
+  .jm2-venture-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.875rem; font-weight: 500; color: #1A1510;
+    letter-spacing: 0.04em;
+  }
+  .jm2-venture-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #9E8B38; flex-shrink: 0;
+  }
+  .jm2-venture-sub {
+    font-size: 0.7rem; font-weight: 400; color: #9A9080;
+    letter-spacing: 0.06em; text-transform: uppercase; margin-left: 0.25rem;
+  }
+
+  .jm2-about-tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem;
+  }
+  .jm2-tag {
+    display: inline-block; padding: 0.4rem 1rem;
+    border: 1px solid #DDD8C8; border-radius: 2px;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #6A5E50;
+    background: #F9F7F0;
+  }
+
+  .jm2-placeholder-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #9A9080; text-align: center; padding: 0.75rem;
+  }
+
+  @media (max-width: 900px) {
+    .jm2-about-inner { grid-template-columns: 1fr; }
+    .jm2-about-photos { margin-bottom: 4rem; }
+    .jm2-stat-badge { left: 0; }
+    .jm2-photo-secondary { right: 0; }
+  }
+</style>
+
+<section class="jm2-about" id="about">
+  <div class="jm2-about-inner">
+
+    <!-- Left: Photos -->
+    <div class="jm2-about-photos">
+
+      <!-- Gold stat badge -->
+      <div class="jm2-stat-badge">
+        <div class="jm2-stat-num">10+</div>
+        <div class="jm2-stat-label">Years of Experience</div>
+      </div>
+
+      <!--
+        REPLACE WITH: <img src="PHOTO_1_URL" alt="Jamie Molnar" class="jm2-photo-main" />
+        Use the bouclé chair seated photo.
+      -->
+      <div class="jm2-photo-main-placeholder">
+        <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+          <ellipse cx="22" cy="22" rx="21" ry="21" stroke="#9E8B38" stroke-width="1"/>
+          <line x1="22" y1="10" x2="22" y2="34" stroke="#9E8B38" stroke-width="0.8"/>
+          <path d="M22 10 C18 6 13 9 16 13 C19 17 22 14 22 10Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+          <path d="M22 10 C26 6 31 9 28 13 C25 17 22 14 22 10Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+          <path d="M22 34 C17 30 14 34 18 36 C20 37 22 35 22 34Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+          <path d="M22 34 C27 30 30 34 26 36 C24 37 22 35 22 34Z" stroke="#9E8B38" stroke-width="0.8" fill="none"/>
+        </svg>
+        <p class="jm2-placeholder-label">Upload: bouclé<br>chair photo</p>
+      </div>
+
+      <!--
+        REPLACE WITH: <img src="PHOTO_2_URL" alt="Jamie" class="jm2-photo-secondary" />
+        Use the walking room / full-length photo.
+      -->
+      <div class="jm2-photo-secondary-placeholder">
+        <p class="jm2-placeholder-label" style="font-size:0.6rem;">Upload:<br>walking photo</p>
+      </div>
+
+    </div>
+
+    <!-- Right: Text -->
+    <div>
+      <div class="jm2-about-eyebrow">
+        <span class="jm2-eyebrow-line"></span>
+        <span class="jm2-eyebrow-text">About Jamie</span>
+      </div>
+
+      <h2 class="jm2-about-h2">
+        Where clinical expertise<br>
+        meets <em>holistic care.</em>
+      </h2>
+
+      <p class="jm2-about-p">
+        I'm Jamie Molnar — licensed clinical social worker, holistic mental health
+        expert, and entrepreneur. My work goes beyond the traditional therapy room.
+        I believe healing happens when we address the whole person: mind, body, and life.
+      </p>
+      <p class="jm2-about-p">
+        Over the past decade I've built an ecosystem of services designed to meet you
+        wherever you are — whether you're seeking personal transformation, relationship
+        healing, professional guidance, or a shared space for growth.
+      </p>
+
+      <!-- Ventures -->
+      <div class="jm2-ventures">
+        <div class="jm2-venture-item">
+          <span class="jm2-venture-dot"></span>
+          Be Your Best Self Counseling
+          <span class="jm2-venture-sub">— Individual &amp; Couples Therapy</span>
+        </div>
+        <div class="jm2-venture-item">
+          <span class="jm2-venture-dot"></span>
+          Holistic House
+          <span class="jm2-venture-sub">— Wellness &amp; Community</span>
+        </div>
+        <div class="jm2-venture-item">
+          <span class="jm2-venture-dot"></span>
+          Clinical Supervision
+          <span class="jm2-venture-sub">— For Pre-Licensed Clinicians</span>
+        </div>
+        <div class="jm2-venture-item">
+          <span class="jm2-venture-dot"></span>
+          Retreats &amp; Consulting
+          <span class="jm2-venture-sub">— Immersive Growth Experiences</span>
+        </div>
+      </div>
+
+      <div class="jm2-about-tags">
+        <span class="jm2-tag">EMDR Certified</span>
+        <span class="jm2-tag">Somatic Therapy</span>
+        <span class="jm2-tag">Gottman Method</span>
+        <span class="jm2-tag">CBT / ACT</span>
+        <span class="jm2-tag">Holistic Wellness</span>
+      </div>
+    </div>
+
+  </div>
+</section>

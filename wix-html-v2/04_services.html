@@ -1,0 +1,279 @@
+<!--
+  SECTION 4 — SERVICES (Brand v2)
+  Reflects all of Jamie's offerings as umbrella brand.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .jm2-services {
+    background: #F4F0E6;
+    padding: 7rem 2rem;
+    font-family: 'Jost', sans-serif;
+  }
+  .jm2-services-inner { max-width: 1200px; margin: 0 auto; }
+
+  /* Header */
+  .jm2-section-header { text-align: center; margin-bottom: 4rem; }
+  .jm2-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;
+  }
+  .jm2-eyebrow-line { display: block; width: 28px; height: 1px; background: #9E8B38; }
+  .jm2-eyebrow-text {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #9E8B38;
+  }
+  .jm2-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600; color: #1A1510; line-height: 1.15;
+    margin-bottom: 1rem; letter-spacing: -0.01em;
+  }
+  .jm2-h2 em { font-style: italic; color: #72182A; }
+  .jm2-subtitle {
+    font-size: 0.95rem; font-weight: 300; color: #6A5E50;
+    max-width: 520px; margin: 0 auto; line-height: 1.85; letter-spacing: 0.02em;
+  }
+
+  /* Cards grid */
+  .jm2-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .jm2-card {
+    background: #fff;
+    border-radius: 2px;
+    padding: 2.5rem;
+    border: 1px solid #E8E2D4;
+    display: flex; flex-direction: column;
+    transition: box-shadow 0.3s, transform 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .jm2-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    transition: opacity 0.3s;
+  }
+  .jm2-card-gold::before  { background: #9E8B38; }
+  .jm2-card-wine::before  { background: #72182A; }
+  .jm2-card-gold2::before { background: linear-gradient(to right, #9E8B38, #C4AA58); }
+  .jm2-card-wine2::before { background: linear-gradient(to right, #72182A, #9E3050); }
+
+  .jm2-card:hover {
+    box-shadow: 0 20px 48px rgba(26,21,16,0.1);
+    transform: translateY(-4px);
+  }
+
+  .jm2-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 400;
+    color: #E8E2D4; line-height: 1;
+    margin-bottom: 1.5rem; letter-spacing: -0.02em;
+  }
+  .jm2-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; color: #1A1510;
+    margin-bottom: 0.25rem; letter-spacing: 0.01em;
+  }
+  .jm2-card-subtitle {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #9E8B38; margin-bottom: 1rem;
+  }
+  .jm2-card-wine .jm2-card-subtitle  { color: #72182A; }
+  .jm2-card-wine2 .jm2-card-subtitle { color: #72182A; }
+
+  .jm2-card-desc {
+    font-size: 0.9rem; font-weight: 300; color: #6A5E50;
+    line-height: 1.85; flex: 1; letter-spacing: 0.02em;
+  }
+  .jm2-card-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 2rem; font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: #9E8B38; text-decoration: none; transition: gap 0.2s;
+  }
+  .jm2-card-wine .jm2-card-link,
+  .jm2-card-wine2 .jm2-card-link { color: #72182A; }
+  .jm2-card-link:hover { gap: 0.75rem; }
+
+  /* Full-width feature strip */
+  .jm2-feature-strip {
+    background: #1A1510;
+    border-radius: 2px;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 0;
+  }
+  .jm2-feature-eyebrow {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #9E8B38; display: block; margin-bottom: 1rem;
+  }
+  .jm2-feature-h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 600; color: #fff; line-height: 1.2;
+    margin-bottom: 1.25rem; letter-spacing: -0.01em;
+  }
+  .jm2-feature-h3 em { font-style: italic; color: #C4AA58; }
+  .jm2-feature-p {
+    font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.65);
+    line-height: 1.9; margin-bottom: 2rem; letter-spacing: 0.02em;
+  }
+  .jm2-btn-gold {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none;
+    color: #1A1510; background: #9E8B38;
+    padding: 1rem 2.25rem; border-radius: 2px; transition: background 0.2s;
+  }
+  .jm2-btn-gold:hover { background: #C4AA58; }
+
+  .jm2-feature-list {
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  .jm2-feature-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .jm2-feature-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .jm2-feature-item-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: #9E8B38;
+    line-height: 1; flex-shrink: 0; min-width: 28px;
+  }
+  .jm2-feature-item-title {
+    font-size: 0.875rem; font-weight: 500; color: #fff;
+    letter-spacing: 0.04em; margin-bottom: 0.2rem;
+  }
+  .jm2-feature-item-desc {
+    font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.5);
+    line-height: 1.7; letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 900px) {
+    .jm2-cards { grid-template-columns: 1fr; }
+    .jm2-feature-strip { grid-template-columns: 1fr; padding: 2.5rem; gap: 2.5rem; }
+  }
+</style>
+
+<section class="jm2-services" id="services">
+  <div class="jm2-services-inner">
+
+    <div class="jm2-section-header">
+      <div class="jm2-eyebrow">
+        <span class="jm2-eyebrow-line"></span>
+        <span class="jm2-eyebrow-text">What I Offer</span>
+        <span class="jm2-eyebrow-line"></span>
+      </div>
+      <h2 class="jm2-h2">An ecosystem of care,<br><em>built around you.</em></h2>
+      <p class="jm2-subtitle">
+        From one-on-one therapy to community retreats, every offering under
+        the Jamie Molnar umbrella is designed to help you grow — personally,
+        relationally, and professionally.
+      </p>
+    </div>
+
+    <!-- 4 Service Cards -->
+    <div class="jm2-cards">
+
+      <!-- Individual Therapy -->
+      <div class="jm2-card jm2-card-gold">
+        <div class="jm2-card-num">01</div>
+        <h3 class="jm2-card-title">Individual Therapy</h3>
+        <p class="jm2-card-subtitle">Be Your Best Self Counseling</p>
+        <p class="jm2-card-desc">
+          Evidence-based, holistic one-on-one sessions tailored to your unique
+          story. Using EMDR, somatic therapy, CBT, and ACT to help you move
+          through anxiety, trauma, life transitions, and more.
+        </p>
+        <a href="#contact" class="jm2-card-link">Get Started &rarr;</a>
+      </div>
+
+      <!-- Couples Therapy -->
+      <div class="jm2-card jm2-card-wine">
+        <div class="jm2-card-num">02</div>
+        <h3 class="jm2-card-title">Couples Therapy</h3>
+        <p class="jm2-card-subtitle">Be Your Best Self Counseling</p>
+        <p class="jm2-card-desc">
+          Rebuild intimacy, improve communication, and navigate conflict with
+          compassion. Gottman Method–informed sessions for couples at any stage
+          — whether in crisis or simply wanting to deepen connection.
+        </p>
+        <a href="#contact" class="jm2-card-link">Get Started &rarr;</a>
+      </div>
+
+      <!-- Clinical Supervision -->
+      <div class="jm2-card jm2-card-gold2">
+        <div class="jm2-card-num">03</div>
+        <h3 class="jm2-card-title">Clinical Supervision</h3>
+        <p class="jm2-card-subtitle">For Pre-Licensed &amp; Licensed Clinicians</p>
+        <p class="jm2-card-desc">
+          Individual and group supervision to help you build confidence, refine
+          your clinical identity, and grow your practice. Reflective, supportive,
+          and grounded in real-world clinical experience.
+        </p>
+        <a href="#contact" class="jm2-card-link">Apply Now &rarr;</a>
+      </div>
+
+      <!-- Business Consultation -->
+      <div class="jm2-card jm2-card-wine2">
+        <div class="jm2-card-num">04</div>
+        <h3 class="jm2-card-title">Business Consultation</h3>
+        <p class="jm2-card-subtitle">For Therapists &amp; Wellness Entrepreneurs</p>
+        <p class="jm2-card-desc">
+          Build the practice or wellness business you've envisioned. From private
+          practice launch to brand strategy, systems, and scaling — practical
+          consulting from someone who has done it.
+        </p>
+        <a href="#contact" class="jm2-card-link">Learn More &rarr;</a>
+      </div>
+
+    </div>
+
+    <!-- Feature strip: Holistic House + Retreats -->
+    <div class="jm2-feature-strip">
+      <div>
+        <span class="jm2-feature-eyebrow">Featured Offerings</span>
+        <h3 class="jm2-feature-h3">
+          Holistic House &amp;<br><em>Immersive Retreats</em>
+        </h3>
+        <p class="jm2-feature-p">
+          Beyond the therapy room — Holistic House is a community space for
+          healing, connection, and growth. Combined with curated retreats designed
+          to create lasting breakthroughs, these experiences are unlike anything
+          in traditional mental health care.
+        </p>
+        <a href="#contact" class="jm2-btn-gold">Explore &amp; Reserve a Spot</a>
+      </div>
+      <div class="jm2-feature-list">
+        <div class="jm2-feature-item">
+          <div class="jm2-feature-item-num">I</div>
+          <div>
+            <div class="jm2-feature-item-title">Holistic House</div>
+            <div class="jm2-feature-item-desc">A shared wellness space for community healing, workshops, and connection.</div>
+          </div>
+        </div>
+        <div class="jm2-feature-item">
+          <div class="jm2-feature-item-num">II</div>
+          <div>
+            <div class="jm2-feature-item-title">Immersive Retreats</div>
+            <div class="jm2-feature-item-desc">Multi-day experiences designed to create deep, lasting personal transformation.</div>
+          </div>
+        </div>
+        <div class="jm2-feature-item">
+          <div class="jm2-feature-item-num">III</div>
+          <div>
+            <div class="jm2-feature-item-title">Workshops &amp; Groups</div>
+            <div class="jm2-feature-item-desc">Specialized group programming on mindfulness, relationships, and growth.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
